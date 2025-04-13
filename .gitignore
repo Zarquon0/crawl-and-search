@@ -1,0 +1,10 @@
+search_engine_app/__pycache__
+search_engine_app/bin
+search_engine_app/include
+search_engine_app/lib
+search_engine_app/log.txt
+search_engine_app/search_db.db
+search_engine_app/pyvenv.cfg
+search_engine_app/crawler
+web_crawler/target
+web_crawler/crawler

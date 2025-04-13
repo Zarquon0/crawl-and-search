@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simply Search</title>
+        <link href="static/search_engine.css" rel="stylesheet"/>
+        <script src="static/search_engine.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Borel&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="search_box">
+            <h1>Simply Search</h1>
+            <form method="POST">
+                {{ sform.hidden_tag() }}
+                {{ sform.term }}
+                {{ sform.submit }}
+            </form>
+        </div>
+        {% if sites %}
+            <div id="separater"></div>
+            <div id="results">
+                {% for site in sites %}
+                    <div class="result">
+                        <a href="https://{{ site.url }}" target="_blank">
+                            {% if site.title == None %}
+                                {{ site.url }}
+                            {% else %}
+                                {{ site.title }}
+                            {% endif %}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </body>
+</html>
